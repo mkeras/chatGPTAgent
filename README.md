@@ -1,2 +1,8 @@
 # chatGPTAgent
- A container that subscribes and publishes to given topic(s), and processes them with chatGPT api. The initial concept is a purchaser, that can perform purchasing activities for a business. 
+ A container that subscribes to a given topic, processes the incoming messages using a given chatGPT model and prompt and publishes the result to a given topic. The idea is to have these configured to be connected to a UNS with specific
+
+ This project is under development. Between program logic and whats available with the chatGPT api (function calling, etc), there are many features and functions to add to this image.
+
+
+TODO:
+- Make configuration dynamic via MQTT
