@@ -3,7 +3,7 @@ from random import randint
 
 __true = ['True', 'true', '1']
 
-DEBUG = environ.get('DEBUG', default=False) in ['True', 'true', '1']
+DEBUG = environ.get('DEBUG', default=False) in __true
 INCLUDE_ORIGINAL_DATA = environ.get('INCLUDE_ORIGINAL_DATA', default='True') in __true
 
 OPENAI_API_KEY = environ.get('OPENAI_API_KEY')
@@ -12,6 +12,7 @@ GPT_MODEL = environ.get('GPT_MODEL', default='gpt-4-1106-preview')
 
 GPT_SYSTEM_PROMPT = environ.get('GPT_SYSTEM_PROMPT')
 GPT_USER_PROMPT = environ.get('GPT_USER_PROMPT', default = '')
+OUTPUT_JSON = environ.get('OUTPUT_JSON', default='True') in __true
 
 MQTT_SUBSCRIBE_TOPIC = environ.get('MQTT_SUBSCRIBE_TOPIC')
 MQTT_PUBLISH_TOPIC = environ.get('MQTT_PUBLISH_TOPIC')
