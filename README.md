@@ -11,7 +11,7 @@ Environment variables are used for configuration:
 
 - DEBUG: Enable debugging (e.g., true or false). Publish logs/error to the logs/debug topic.
 - OPENAI_API_KEY: Your OpenAI API Key
-- GPT_MODEL: GPT model identifier (e.g., gpt-3.5-turbo); typos can cause crashes
+- GPT_MODEL: GPT model identifier (e.g., gpt-3.5-turbo); typos can cause crashes. See https://platform.openai.com/docs/models
 - GPT_SYSTEM_PROMPT: System prompt for the model
 - GPT_USER_PROMPT: Optional user prompt added before incoming messages
 - OUTPUT_JSON: Format of output (true/false; refer to OpenAI API documentation (https://platform.openai.com/docs/api-reference/chat/create#chat-create-response_format))
