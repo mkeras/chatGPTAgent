@@ -36,4 +36,4 @@ For now, the topic structure that the container uses is:
 
 ## Features
 - Process/Transform data from an MQTT topic and publish it to another MQTT topic
-- Change chatGPT configuration parameters via MQTT. Right now this topic is overwritten whenever by the environment variables whenever the container starts, but 
+- Change chatGPT configuration parameters via MQTT. Right now this topic is overwritten whenever by the environment variables whenever the container starts, but it will be updated to default to the config stored in the MQTT config topic, if available.
