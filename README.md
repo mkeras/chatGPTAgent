@@ -1,6 +1,6 @@
 # chatGPTAgent
 ## Overview
-This container is designed to function as a part of a Universal Naming System (UNS), acting as both a consumer and producer of events/information. It subscribes to a specified MQTT topic, processes incoming messages using a specified ChatGPT model and prompt, and then publishes the results to another topic. The container can be used independently or orchestrated in a sequence where one instance's output becomes the input for the next, enabling complex step by step data transformations. Another setup could be having 1 container manipulate the prompt settings of another (Have the output topic of one instance be the config topic of another instance), etc.
+This container is conceptualized to function as a part of a UNS, connecting to an MQTT Broker as both a consumer and producer of events/information. It subscribes to a specified MQTT topic, processes incoming messages using a specified ChatGPT model and prompt, and then publishes the results to another topic. The container can be used independently or orchestrated in a sequence where one instance's output becomes the input for the next, enabling complex step by step data transformations. Another setup could be having 1 container manipulate the prompt settings of another (Have the output topic of one instance be the config topic of another instance), etc.
 
 ## Development Status
 - Under active development: Subject to significant changes as features are added and refined.
