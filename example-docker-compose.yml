@@ -1,0 +1,8 @@
+version: '3.9'
+
+
+services:
+  chat_agent:
+      image: mkult1a/gpt-agent:latest
+      env_file:
+        - ./example.env

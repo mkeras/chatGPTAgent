@@ -11,9 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./app /app-data/app/
 COPY ./run.py /app-data/
 
-
-# Set environment variable for OpenAI API key
-# ENV OPENAI_API_KEY=your-openai-api-key-here
-
 # Run run.py when the container launches
 CMD ["python", "run.py"]
