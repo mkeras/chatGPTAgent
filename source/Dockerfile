@@ -1,15 +1,13 @@
-FROM python:3.10-alpine3.18
+FROM mkult1a/sparkplug-node:dev
 
-# Set working directory
-WORKDIR /app-data
 
-# Copy requirements and install dependencies
-COPY requirements.txt /app-data/
-RUN pip install --no-cache-dir -r requirements.txt
+ENV SPARKPLUG_GROUP_ID='chatGPT Agents'
+ENV GPT_MODEL=gpt-4-1106-preview
 
-# Copy the current directory contents into the container
-COPY ./app /app-data/app/
-COPY ./run.py /app-data/
+COPY ./app /sparkplug-node/app/
 
-# Run run.py when the container launches
-CMD ["python", "run.py"]
+COPY requirements.txt /app-data/requirements2.txt
+RUN pip install --no-cache-dir -r /app-data/requirements2.txt
+
+
+CMD ["python", "-m", "app"]

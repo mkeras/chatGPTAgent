@@ -1,2 +1,2 @@
 openai==0.28.1
-paho-mqtt==1.6.1
+pydantic==2.5.2
