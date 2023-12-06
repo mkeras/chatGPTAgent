@@ -60,14 +60,17 @@ def on_incoming_message(client: mqtt.Client, userdata, message):
         **create_chat_args
     )
 
+    process_message_end = helpers.millis()
     if not result['success']:
         failed_count = chat_gpt_messages_processed_failed.current_value + 1
         chat_gpt_messages_processed_failed.update_value(failed_count)
+        chat_gpt_last_message_processed_ts.update_value(process_message_end)
+        if not chat_gpt_first_message_processed_ts.current_value:
+            chat_gpt_first_message_processed_ts.update_value(process_message_end)
         return
 
     content = result['response']['choices'][0]['message']['content']
     client.publish(topic=mqtt_output_topic_tag.current_value, payload=content)
-    process_message_end = helpers.millis()
 
     if create_chat_args.get('response_format') and create_chat_args['response_format'].get('type') == 'json_object':
         result['response']['choices'][0]['message']['content'] = json.loads(content)
