@@ -66,6 +66,7 @@ Testing
 
 
 # Example
+See example-docker-compose.yml and example.env
 
 # Planned Updates
 ## General Improvements
