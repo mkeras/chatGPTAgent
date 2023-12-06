@@ -1,7 +1,0 @@
-{
-    "bdSeq": 1,
-    "recreate_node_args": {
-        "scan_rate": 5000,
-        "config_save_rate": 60000
-    }
-}
