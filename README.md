@@ -34,7 +34,7 @@ The application is configured using environment variables. Note that GPT_MODEL, 
 
 ## The Metrics/Tags
 
-This screenshot of the tags from the MQTT Engine in Ignition show the tag structure of the container:
+### This screenshot of the tags from the MQTT Engine in Ignition show the tag structure of the container:
 ![How the container appears in Ignition](img/ignition-tags-screenshot.png)
 
 The following config tags are directly used in the parameters when calling of the openai.ChatCompletion.create function:
@@ -46,24 +46,26 @@ The following config tags are directly used in the parameters when calling of th
 - Agent Config/chatGPT Parameters/temperature --> https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature
 
 
-The following config tags are used for the settings of the gpt agent container:
+### The following config tags are used for the settings of the gpt agent container:
 - Agent Config/MQTT Publish Topic --> The topic to publish the content result of the openai.ChatCompletion.create function
 - Agent Config/MQTT Subscribe Topic --> The topic to subscribe to that triggers and payload is given to the openai.ChatCompletion.create function
 - Agent Config/System Prompt --> The required system (role=system) prompt by which chatGPT is instructed on how to process the incoming payloads from the MQTT Subscribe Topic
 - Agent Config/User Prompt --> The optional user (role=user) prompt to put in front of the incoming payloads from the MQTT Subscribe Topic
 
 
-The following tags are performance metrics of the container:
+### The following tags are performance metrics of the container:
 - Metrics/Completion Token Usage --> The total number of completion tokens used since the first message processed
 - Metrics/First Message Processed ts --> The timestamp in milliseconds when the first message was processed by the container
 - Metrics/Last Message Processed ts --> The timestamp in milliseconds that the most recent message received was processed by the container
-- Metrics/Message Processed JSON
-- - Testing
+- Metrics/Message Processed JSON --> A JSON of the whole response from the openai API, along with some useful info: The delta between receving the MQTT message and the response from the openai API, and their timestamps, a uuid (for future use, it currently isn't used for anything), and a success flag for indicating if the openai API request successfully processed the data or not
+Testing
 - Metrics/Messages Processed --> The count of total messages processed by the container since the first message processed
 - Metrics/Messages Processed Failed --> The count of total messages that were failed to be processed by the container since the first message processed
 - Metrics/Prompt Token Usage --> The total number of prompt tokens used since the first message processed
 - Metrics/Total Token Usage --> The total number of tokens used since the first message processed
 
+
+# Example
 
 # Planned Updates
 ## Multiple Agents per Container
