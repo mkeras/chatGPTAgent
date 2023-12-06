@@ -28,3 +28,8 @@ The application is configured using environment variables. Note that GPT_MODEL, 
 - DATA_DIRECTORY: Directory for persistent data files inside the container, default is "/etc/sparkplug/<SPARKPLUG_GROUP_ID>/<SPARKPLUG_EDGE_NODE_ID>/".
 - CONFIG_FILEPATH: File for persistent edge node config inside the container, default is "<DATA_DIRECTORY>config.json".
 - MEMORY_TAGS_FILEPATH: File for persistent memory tag data inside the container, default is "<DATA_DIRECTORY>memory-tags.json".
+
+###
+The Metrics/Tags
+
+![How the container appears in Ignition](img/ignition-tags-screenshot.png)
