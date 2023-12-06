@@ -37,7 +37,7 @@ The application is configured using environment variables. Note that GPT_MODEL, 
 ### This screenshot of the tags from the MQTT Engine in Ignition show the tag structure of the container:
 ![How the container appears in Ignition](img/ignition-tags-screenshot.png)
 
-The following config tags are directly used in the parameters when calling of the openai.ChatCompletion.create function:
+### The following config tags are directly used in the parameters when calling of the openai.ChatCompletion.create function:
 - Agent Config/chatGPT Parameters/frequency_penalty --> https://platform.openai.com/docs/api-reference/chat/create#chat-create-frequency_penalty
 - Agent Config/chatGPT Parameters/max_tokens --> https://platform.openai.com/docs/api-reference/chat/create#chat-create-max_tokens
 - Agent Config/chatGPT Parameters/model --> https://platform.openai.com/docs/api-reference/chat/create#chat-create-model
@@ -68,4 +68,22 @@ Testing
 # Example
 
 # Planned Updates
+## General Improvements
+- Improvements to data and parameters validation
+- MQTT Topics validation
+- Improvments to logging
+- Improvements to error handling
+- Improvements to thread/process handling
+- Additional performance metrics
+- Additional configuration options
+## Prompt Complexity
+- Add options for function calling (https://platform.openai.com/docs/api-reference/chat/create#chat-create-tools)
+- Develop some sort of plugin or functions for getting contextual data to input / output, eg. looking up data in a database
 ## Multiple Agents per Container
+- Make 1 container capable of handling multiple brokers and multiple agents
+- The main controller will be the Sparkplug Node, each chatGPT agent will be a Sparkplug Device
+- Each Sparkplug Device/chatGPT agent will then have unique settings with different parameters, topics, prompts, and potentially brokers
+## Orchestration Tool
+- This idea is still vague
+- A some kind of tool in which chatGPT could be used to generate other chatGPT agents
+- for example, asking chatGPT to break down a problem into logical steps --> Then for each step asking chatGPT to create the prompts for each logical step --> have logic to generate the config for the container, including linking the input and output mqtt topics to create a complete flow
