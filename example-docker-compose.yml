@@ -3,8 +3,8 @@ version: '3.9'
 
 services:
   chat_agent:
-      image: mkult1a/gpt-agent:dev
+      image: mkult1a/gpt-agent:latest
       env_file:
         - ./example.env
       volumes:
-        - ./volume-data:/etc/sparkplug/
+        - ./volume-data:/etc/sparkplug/  # Use volume to enable persistence of the metrics and config
